@@ -1,0 +1,32 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fenroe/ToDo.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fenroe/ToDo.js/issues"
+  },
+  "homepage": "https://github.com/Fenroe/ToDo.js#readme",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "csv-loader": "^3.0.3",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.2",
+    "webpack-cli": "^4.8.0",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "date-fns": "^2.23.0"
+  }
+}
