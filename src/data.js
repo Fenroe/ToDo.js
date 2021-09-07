@@ -13,19 +13,21 @@ const data = (() => {
 
     const getNavForm = id => `
         <div>
-            <label></label>
-            <input type="text" id=${id}>
-            <button id="add-${id}">Submit</button>
+            <input class="add-category-input" type="text" id=${id}>
+            <div class="nb-buttons-container">
+                <button class="add-category nb-button" id="add-${id}">Submit</button>
+                <button class="add-category-cancel nb-button" id="cancel-${id}">Cancel</button>
+            </div>
         </div>`
 
     const fillProjectsMenu = projects => {
         projectsMenuContents = ``;
         projects.forEach(item => {
             projectsMenuContents += `
-            <li>
+            <li class="nb-item">
                 <span class="category-span" data-index="${item}">${item}</span>
                 <span class="remove-category-span" data-parent="projects" data-index ="remove ${item}">Remove</span>
-            </li>`
+            </li class="nb-item>`
         }) 
     }
 
@@ -98,13 +100,12 @@ const data = (() => {
 
     const getHeaderContents = () =>  `
     <div class="logo">
+        <i class="fas fa-sticky-note logo-icon"></i>
         <h1 class="logo-text">
             ToDo.js
         </h1>
     </div>
-        <button class="mobile-menu">
-            <img src="" alt="">
-        </button>`
+    <i class="fas fa-bars header-menu"></i>`
 
     const getNavContents = () => `
     <div class="nb-todo">
@@ -131,8 +132,8 @@ const data = (() => {
         <h2 class="nb-title">Projects</h2>
         <ul class="nb-menu">${projectsMenuContents}</ul>
         <div class=nb-add-item>
-            <i></i>
-            <span class=nb-projects-add-item-span>New Project</span> 
+            <i class="fas fa-plus nb-add-item-icon"></i>
+            <span class=nb-add-item-span>New Project</span> 
         </div>
         ${getNavForm(`project`)}
     </div>
@@ -140,7 +141,7 @@ const data = (() => {
         <h2 class="nb-title">Lists</h2>
         <ul class="nb-menu">${listsMenuContents}</ul>
         <div class=nb-add-item>
-        <i></i>
+        <i class="fas fa-plus nb-add-item-icon"></i>
         <span class=nb-add-item-span>New List</span> 
         </div>
         ${getNavForm(`list`)}

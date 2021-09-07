@@ -1,0 +1,55 @@
+nav {
+    background-color: $navColor;
+    color: $headerColor;
+    width: 16rem;
+    padding: 28px;
+    height: 100vh;
+    font-size: $defaultSpan;
+}
+
+.nb-title {
+    font-size: $NavHeading;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.nb-item {
+    &:hover {
+        background-color: $hoverColor;
+        color: $tvColor;
+    }
+}
+
+.category-span {
+    cursor: pointer;
+}
+
+.nb-add-item-icon {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.add-category-input {
+    font-size: $defaultSpan;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.nb-button {
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    width: 6rem;
+    height: 2.5rem;
+    padding: 1px;
+    border: 1px solid $headerColor;
+    cursor: pointer;
+    background-color: $headerColor;
+    color: $tvColor;
+
+    &:hover {
+        background-color: $tvColor;
+        color: $headerColor;
+        border: 1px solid $tvColor;
+    }
+}

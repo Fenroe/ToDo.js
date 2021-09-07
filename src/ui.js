@@ -48,7 +48,6 @@ const ui = (() => {
 
     const removeList = removedList => {
         categories.removeList(removedList);
-        console.log(categories.getLists());
         storage.storeLists(categories.getLists());
         loadNav();
     }
@@ -70,7 +69,6 @@ const ui = (() => {
     const initRemoveCategory = () => {
         document.querySelectorAll(`.remove-category-span`).forEach(button => {
             button.addEventListener(`click`, () => {
-                console.log(`success`);
                 if (button.dataset.parent === `projects`) {
                     console.log(button.dataset.index);
                     removeProject(button.dataset.index.replace(`remove `, ``));
@@ -168,6 +166,12 @@ const ui = (() => {
         categories.setProjects(storage.getProjects());
         categories.setLists(storage.getLists());
         tasks.setTasks(storage.getTasks());
+    }
+
+    const checkCategory = () => {
+        if (!categories.getProjects().includes(currentCategory) && !categories.getLists().includes(currentCategory)) {
+            setCurrentCategory(`ToDo`);
+        }
     }
 
 

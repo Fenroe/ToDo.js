@@ -1,4 +1,5 @@
 import { ui } from "./ui";
+import "./main.css";
 
 ui.retrieveStorage();
 ui.loadHeader();
