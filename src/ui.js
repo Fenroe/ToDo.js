@@ -42,14 +42,45 @@ const ui = (() => {
 
     const removeProject = removedProject => {
         categories.removeProject(removedProject);
-        storage.storeLists(categories.getProjects());
+        storage.storeProjects(categories.getProjects());
         loadNav();
     }
 
     const removeList = removedList => {
         categories.removeList(removedList);
+        console.log(categories.getLists());
         storage.storeLists(categories.getLists());
         loadNav();
+    }
+
+    const removeTask = removedTaskName => {
+        tasks.removeTask(removedTaskName);
+        storage.storeTasks(tasks.getTasks());
+        loadTaskView();
+    }
+
+    const initRemoveTask = () => {
+        document.querySelectorAll(`.tv-task-remove-span`).forEach(button => {
+            button.addEventListener(`click`, () => {
+                removeTask(button.dataset.index.replace(`remove`, ``));
+            })
+        })
+    }
+
+    const initRemoveCategory = () => {
+        document.querySelectorAll(`.remove-category-span`).forEach(button => {
+            button.addEventListener(`click`, () => {
+                console.log(`success`);
+                if (button.dataset.parent === `projects`) {
+                    console.log(button.dataset.index);
+                    removeProject(button.dataset.index.replace(`remove `, ``));
+                }
+                if (button.dataset.parent === `lists`) {
+                    console.log(button.dataset.index);
+                    removeList(button.dataset.index.replace(`remove `, ``));
+                }
+            })
+        })
     }
 
     const addList = () => {
@@ -109,10 +140,12 @@ const ui = (() => {
         initAddProject();
         initAddList();
         initSelectCategory();
+        initRemoveCategory();
     }
 
     const initTaskViewButtons = () => {
         initAddTask();
+        initRemoveTask();
     }
 
     const loadHeader = () => loader(header, data.getHeaderContents());

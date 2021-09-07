@@ -49,8 +49,8 @@ const tasks = (() => {
         tasks.push(newTask);
     }
 
-    const removeTask = removedTask => {
-        index = tasks.indexOf(removedTask);
+    const removeTask = removedTaskName => {
+        let index = tasks.findIndex(task => task.name === removedTaskName);
         tasks.splice(index, 1);
     }
 

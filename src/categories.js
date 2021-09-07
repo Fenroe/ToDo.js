@@ -15,8 +15,9 @@ const categories = (() => {
     const addProject = newProject => projects.push(newProject);
 
     const removeProject = removedProject => {
-        index = projects.indexOf(removedProject);
+        let index = projects.indexOf(removedProject);
         projects.splice(index, 1);
+        return projects;
     }
 
     const clearProjects = () => projects = [];
@@ -36,8 +37,9 @@ const categories = (() => {
     const addList = newList => lists.push(newList);
 
     const removeList = removedList => {
-        index = lists.indexOf(removedList);
+        let index = lists.indexOf(removedList);
         lists.splice(index, 1);
+        return lists;
     }
 
     const clearLists = () => lists = [];
