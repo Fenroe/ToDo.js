@@ -56,12 +56,21 @@ const tasks = (() => {
 
     const clearTasks = () => tasks = [];
 
+    const cleanTasks = () => {
+        tasks.forEach(task => {
+            if (task.category != `ToDo` && task.completed) {
+                removeTask(task);
+            }
+        })
+    }
+
     return {
         getTasks,
         setTasks,
         newTask,
         removeTask,
-        clearTasks
+        clearTasks,
+        cleanTasks
     }
 })()
 

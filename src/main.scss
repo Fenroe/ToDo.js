@@ -2,7 +2,12 @@
 @import "vars";
 @import "header";
 @import "nav";
+@import "taskview";
 
 main {
     display: flex;
+}
+
+div {
+    width: 100%;
 }

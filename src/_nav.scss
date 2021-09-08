@@ -1,7 +1,7 @@
 nav {
     background-color: $navColor;
     color: $headerColor;
-    width: 16rem;
+    width: 500px;
     padding: 28px;
     height: 100vh;
     font-size: $defaultSpan;
@@ -14,9 +14,20 @@ nav {
 }
 
 .nb-item {
+    display: flex;
+    justify-content: space-between;
+
+    .remove-category-span {
+        display: none;
+        cursor: pointer;
+    }
     &:hover {
         background-color: $hoverColor;
         color: $tvColor;
+
+        .remove-category-span {
+            display: inline;
+        }
     }
 }
 
@@ -24,19 +35,42 @@ nav {
     cursor: pointer;
 }
 
+.nb-add-item {
+    
+    &:hover {
+        background-color: $hoverColor;
+        color: $tvColor;
+    }
+}
+
 .nb-add-item-icon {
     font-size: 18px;
     cursor: pointer;
+    margin-top: 1rem;
+}
+
+.nb-hide {
+    display: none;
+}
+
+.nb-hide {
+    display: none;
 }
 
 .add-category-input {
     font-size: $defaultSpan;
-    width: 100%;
+    width: 60%;
     padding-left: 1rem;
 }
 
+.nb-buttons-container {
+    display: flex;
+    justify-content: left;
+}
+
 .nb-button {
-    border-radius: 5px;
+    border-radius: 1rem;
+    margin-right: .5rem;
     font-size: 18px;
     font-weight: 700;
     width: 6rem;
